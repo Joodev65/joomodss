@@ -12,6 +12,13 @@
       ],
       "role": "free",
       "createdAt": "2026-01-17T07:04:10.065Z"
+    },
+    {
+      "username": "kontol",
+      "password": "kontltltlt",
+      "apikeys": [],
+      "role": "free",
+      "createdAt": "2026-01-17T07:09:01.936Z"
     }
   ]
 }
