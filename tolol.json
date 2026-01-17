@@ -3,7 +3,13 @@
     {
       "username": "admin",
       "password": "joseganteng123",
-      "apikeys": [],
+      "apikeys": [
+        {
+          "key": "V2L_MKHYP3ML_VN4HV6NI",
+          "created": "2026-01-17T07:04:19.869Z",
+          "active": true
+        }
+      ],
       "role": "free",
       "createdAt": "2026-01-17T07:04:10.065Z"
     }
