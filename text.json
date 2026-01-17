@@ -314,6 +314,13 @@
       "content": "Bbb",
       "timestamp": "2026-01-17T05:01:46.275Z",
       "views": 0
+    },
+    "rg70uewc": {
+      "id": "rg70uewc",
+      "filename": "Run.js",
+      "content": "1. pkg update -y && pkg upgrade -y\npkg install git nodejs-lts nano -y\n2. git clone https://github.com/Joodev65/alicia-tg-bot.git\n3. cd alicia-tg-bot\n4. npm install\n5. npm start",
+      "timestamp": "2026-01-17T15:19:14.558Z",
+      "views": 0
     }
   }
 }
