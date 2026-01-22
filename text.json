@@ -328,6 +328,13 @@
       "content": "// t.me/JooModdss\n\nconst axios = require(\"axios\");\nconst konstol = \"https://api.mail.tm\";\n\nfunction randomStr(len = 10) {\n  return Math.random().toString(36).substring(2, 2 + len);\n}\n\nasync function createTempEmail() {\n  const domainRes = await axios.get(konstol + \"/domains\");\n  const domain = domainRes.data[\"hydra:member\"][0].domain;\n\n  const address = `${randomStr(8)}@${domain}`;\n  const password = randomStr(12);\n\n  await axios.post(konstol + \"/accounts\", {\n    address,\n    password\n  });\n\n  const tokenRes = await axios.post(konstol + \"/token\", {\n    address,\n    password\n  });\n\n  return {\n    email: address,\n    password,\n    token: tokenRes.data.token\n  };\n}\n\nasync function getMessages(token) {\n  const res = await axios.get(konstol + \"/messages\", {\n    headers: {\n      Authorization: `Bearer ${token}`\n    }\n  });\n  return res.data[\"hydra:member\"];\n}\n\nasync function getMessageDetail(id, token) {\n  const res = await axios.get(konstol + \"/messages/\" + id, {\n    headers: {\n      Authorization: `Bearer ${token}`\n    }\n  });\n  return res.data;\n}\n\nasync function deleteMessage(id, token) {\n  await axios.delete(konstol + \"/messages/\" + id, {\n    headers: {\n      Authorization: `Bearer ${token}`\n    }\n  });\n  return true;\n}\n\nmodule.exports = {\n  createTempEmail,\n  getMessages,\n  getMessageDetail,\n  deleteMessage\n};",
       "timestamp": "2026-01-19T11:31:46.024Z",
       "views": 0
+    },
+    "rfyo99ht": {
+      "id": "rfyo99ht",
+      "filename": "uji. txt",
+      "content": "Yhh",
+      "timestamp": "2026-01-22T04:04:41.129Z",
+      "views": 0
     }
   }
 }
