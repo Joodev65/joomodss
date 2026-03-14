@@ -412,6 +412,13 @@
       "content": "Maklu",
       "timestamp": "2026-03-14T03:17:57.654Z",
       "views": 0
+    },
+    "c52ks8ty": {
+      "id": "c52ks8ty",
+      "filename": "sjjwjw.sh",
+      "content": "#!/bin/bash\n# =========================\n# Minecraft VPS Auto Server Installer (PaperMC)\n# =========================\n\n# ====== Update sistem & install Java + tools ======\necho \"Updating system...\"\nsudo apt update -y && sudo apt upgrade -y\necho \"Installing OpenJDK 20, wget, curl, screen, jq...\"\nsudo apt install -y openjdk-20-jdk wget curl screen jq\n\n# ====== Setup direktori server ======\nSERVER_DIR=\"$HOME/mc-server\"\nmkdir -p \"$SERVER_DIR\"\ncd \"$SERVER_DIR\" || exit\n\n# ====== Download PaperMC versi terbaru 1.20.x ======\nVERSION=\"1.20.1\"\nLATEST_BUILD=$(curl -s https://api.papermc.io/v2/projects/paper/versions/$VERSION | jq '.builds[-1]')\necho \"Downloading PaperMC $VERSION build $LATEST_BUILD...\"\nwget -q -O paper.jar \"https://api.papermc.io/v2/projects/paper/versions/$VERSION/builds/$LATEST_BUILD/downloads/paper-$VERSION-$LATEST_BUILD.jar\"\n\n# ====== EULA ======\necho \"eula=true\" > eula.txt\n\n# ====== Buat start.sh ======\ncat > start.sh <<'EOF'\n#!/bin/bash\nPORT=${PORT:-25565}\nOWNER=\"JooModdss1st\"\nPUBLIC_IP=$(curl -s https://api.ipify.org)\n\necho \"==========================================\"\necho \"Minecraft Paper Server - VPS Version\"\necho \"IP Address : $PUBLIC_IP\"\necho \"Java Port  : $PORT\"\necho \"==========================================\"\n\n# Run server di background\nscreen -dmS mc_server java -Xms1G -Xmx2G -jar paper.jar --port $PORT nogui\n\n# Tunggu server start 15 detik\nsleep 15\n\n# Set owner/admin\necho \"$OWNER\" > whitelist.json\necho \"op $OWNER\" > ops.txt\necho \"Owner/Admin set: $OWNER\"\n\n# Aktifkan keepInventory\nscreen -S mc_server -p 0 -X stuff \"gamerule keepInventory true$(printf \\\\r)\"\necho \"keepInventory activated!\"\nEOF\n\nchmod +x start.sh\n\n# ====== Jalankan server ======\n./start.sh\n\necho \"Minecraft Paper Server sudah berjalan di background!\"\necho \"Gunakan 'screen -r mc_server' untuk attach ke console\"\necho \"Port bisa diubah: export PORT=xxxx sebelum ./start.sh\"",
+      "timestamp": "2026-03-14T13:12:04.201Z",
+      "views": 0
     }
   }
 }
