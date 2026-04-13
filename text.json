@@ -482,6 +482,13 @@
       "content": "hello world",
       "timestamp": "2026-04-12T08:45:24.789Z",
       "views": 0
+    },
+    "268iavxi": {
+      "id": "268iavxi",
+      "filename": "P.py",
+      "content": "file_name = 'index.js'  # Ganti dengan nama file lu\n\ntry:\n    # Membaca isi file\n    with open(file_name, 'r', encoding='utf-8') as f:\n        content = f.read()\n\n    # Menghapus ZWNJ\n    original_length = len(content)\n    cleaned_content = content.replace('\\u200c', '')\n    removed_count = original_length - len(cleaned_content)\n\n    # Menulis kembali ke file\n    with open(file_name, 'w', encoding='utf-8') as f:\n        f.write(cleaned_content)\n\n    print(f\"Berhasil! {removed_count} karakter ZWNJ telah dihapus dari {file_name}.\")\nexcept FileNotFoundError:\n    print(\"File nggak ketemu, coba cek lagi namanya.\")\nexcept Exception as e:\n    print(f\"Terjadi error: {e}\")",
+      "timestamp": "2026-04-13T10:42:19.807Z",
+      "views": 0
     }
   }
 }
