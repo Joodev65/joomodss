@@ -517,6 +517,13 @@
       "content": "const supportEmails = [\n  'support@support.whatsapp.com',\n  'smb@support.whatsapp.com',\n  'smb@whatsapp.com',\n  'android@support.whatsapp.com',\n  'iphone@support.whatsapp.com',\n  'smb_web@support.whatsapp.com',\n  'business-support@whatsapp.com'\n];\n\nfunction doGet(e) {\n  const nomor = e.parameter.nomor;\n\n  if (!nomor) {\n    return json({\n      status: false,\n      message: 'Parameter nomor wajib diisi. Contoh: ?nomor=+6283162605767'\n    });\n  }\n\n  const body = `Halo tim Whatsapp\n\nSaya ingin menyampaikan keluhan saya. Beberapa hari ini saya mencoba masuk ke akun WhatsApp menggunakan nomor saya, tetapi selalu gagal. Di layar muncul tulisan merah kalau nomor saya tidak bisa diverifikasi. Akibatnya saya sama sekali tidak bisa login.\n\nPadahal nomor saya aktif, masih bisa menerima SMS dan panggilan. Saya juga sudah coba semua cara: ganti jaringan, hapus data aplikasi, install ulang WhatsApp, bahkan menunggu beberapa jam sebelum mencoba lagi. Tapi hasilnya tetap sama, verifikasi tidak bisa dilakukan.\n\nSaya merasa bingung, karena nomor ini resmi dan masih aktif dipakai untuk komunikasi sehari-hari. Saya sangat membutuhkan WhatsApp untuk urusan keluarga dan pekerjaan, jadi tolong sekali tim WhatsApp membantu memperbaiki masalah ini agar saya bisa kembali menggunakan akun saya.\n\nTerima kasih banyak atas bantuan dan perhatian dari tim.\n\nHormat saya\n[${nomor}]`;\n\n  supportEmails.forEach(email => {\n    MailApp.sendEmail({\n      to: email,\n      subject: '',\n      body: body\n    });\n  });\n\n  return json({\n    status: true,\n    message: 'Email berhasil dikirim',\n    nomor: nomor,\n    total_email: supportEmails.length\n  });\n}\n\nfunction json(data) {\n  return ContentService\n    .createTextOutput(JSON.stringify(data))\n    .setMimeType(ContentService.MimeType.JSON);\n}",
       "timestamp": "2026-05-01T04:48:54.856Z",
       "views": 0
+    },
+    "zl96119x": {
+      "id": "zl96119x",
+      "filename": "test.js",
+      "content": "console.log(\"Hello World!\");",
+      "timestamp": "2026-05-01T10:49:38.587Z",
+      "views": 0
     }
   }
 }
