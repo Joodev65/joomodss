@@ -594,6 +594,13 @@
       "content": "https://drive.google.com/drive/folders/1DK6lMQoYtMlATH7m5RXG93N05hO5yVFd",
       "timestamp": "2026-08-24T01:57:25.080Z",
       "views": 0
+    },
+    "ag02eko0": {
+      "id": "ag02eko0",
+      "filename": "pp.py",
+      "content": "a = int(input(\"Masukkan angka 1 : \"))\nb = input(\"Masukkan Operasi Matematika 1 (+,-,*,/) : \")\nc = int(input(\"Masukkan angka 2 : \"))\nd = input(\"Apakah ada Operasi Matematika 2 (Y/N) : \")\n\nif d == \"N\":\n    if b == \"+\":\n        print(a + c)\n    elif b == \"-\":\n        print(a - c)\n    elif b == \"*\":\n        print(a * c)\n    elif b == \"/\":\n        print(a / c)\n    else:\n        print(\"Masukkan tanda operasi yang benar\")\n\nelif d == \"Y\":\n    e = input(\"Masukkan Operasi Matematika 2 (+,-,*,/) : \")\n    f = int(input(\"Masukkan angka 3 : \"))\n\n\n    if b == \"+\":\n        hasil = a + c\n    elif b == \"-\":\n        hasil = a - c\n    elif b == \"*\":\n        hasil = a * c\n    elif b == \"/\":\n        hasil = a / c\n    else:\n        print(\"Operasi pertama salah\")\n        exit()\n\n    if e == \"+\":\n        hasil = hasil + f\n    elif e == \"-\":\n        hasil = hasil - f\n    elif e == \"*\":\n        hasil = hasil * f\n    elif e == \"/\":\n        hasil = hasil / f\n    else:\n        print(\"Operasi kedua salah\")\n        exit()\n\n    print(\"Hasil =\", hasil)\n\nelse:\n    print(\"Masukkan Y atau N\")",
+      "timestamp": "2026-08-24T03:26:20.868Z",
+      "views": 0
     }
   }
 }
